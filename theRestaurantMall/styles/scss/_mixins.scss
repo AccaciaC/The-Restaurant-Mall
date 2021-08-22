@@ -1,0 +1,103 @@
+//INCLUDES ALL THE: Fonts, Button, Bleed Images and Form styles for reference.
+
+// FONTS
+@mixin font($f-f: $font-1, $font-size, $color:white, $f-w:400, $l-h:99.8px, $l-s:1.3px, $t-a:left, $padding:0, $margin:0, $t-t:uppercase, $bkg-c:none){
+    font-family: $f-f;
+    text-transform: $t-t;
+
+    font-size: $font-size;
+    color: $color;
+    font-weight: $f-w;
+    line-height: $l-h;
+    letter-spacing: $l-s;
+    text-align: $t-a;
+    margin: $margin;
+    padding: $padding;
+    background-color: $bkg-c;
+}
+
+// BUTTON
+@mixin button($color:white, $bkg-c:none, $padding:15px, $margin, $width:auto){
+
+    font-family: $font-2;
+    font-size: 2.24rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    line-height: 41.6px;
+    letter-spacing: 1.3px;
+    text-align: center;
+    border: none;
+    padding: $padding;
+
+    color: $color;
+    background-color: $bkg-c;
+    margin: $margin;
+    width: $width;
+}
+
+// BLEED IMAGES
+@mixin bleedImage ($url, $height){
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    height: $height; 
+    background-image: $url;  
+}
+
+// FORMS
+  @mixin form($width: 800px, $margin:0, $bkg-c:$pine, $f-d:row){
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    fieldset {
+      width: $width;
+      margin: $margin;
+      display: flex;
+      flex-direction: $f-d;
+      justify-content: space-between;
+      border: none;
+    }
+    .submit-field {
+         display: flex;
+         flex-direction: column;
+    }  
+      .visually-hidden:not(:focus):not(:active){ 
+        position: absolute !important;
+        height: 1px; 
+        width: 1px;
+        overflow: hidden;
+        clip: rect(1px 1px 1px 1px); 
+        clip: rect(1px, 1px, 1px, 1px);
+        white-space: nowrap; 
+      }
+      input,
+      textarea {
+        background-color: $bkg-c;
+        box-shadow: none;
+        font-size: 1.8rem;
+        color: white;
+        border: none;
+      }
+      ::placeholder {
+        color: white;
+      }
+      input {
+        border-bottom: 2px $sunflower-yellow solid;
+        width: calc((50%) - 40px);
+        height: 35px;
+        margin-bottom: 20px;
+      }
+      textarea {
+        height: 180px;
+        border: 2px $sunflower-yellow solid;
+      }
+      button {
+        @include button($pine, $sunflower-yellow, 0, 25px 0 80px, 100%)
+      }
+
+  }

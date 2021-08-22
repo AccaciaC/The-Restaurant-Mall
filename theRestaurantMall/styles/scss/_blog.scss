@@ -1,0 +1,173 @@
+@import 'setup';
+@import 'variables';
+@import 'mixins';
+
+.blog-header {
+    @include bleedImage(url(../the-restaurant-mall-assets/blog-header.jpg), 600px);
+  
+  .blog-header-img {
+    width: 838px;
+    margin-top: 220px;
+    box-shadow: -14px 20px 0px -2px $sunflower-yellow;
+    z-index: 2;
+  }
+  }
+
+  .blog-main {
+    position: relative;
+  }
+
+  .side-content {
+    width: 400px;
+    position: absolute;
+    left: 0;
+    top:85px;
+    box-shadow: 32px 9px 0px -9px $almost-black;
+    .side-content-text {
+      width: 350px;
+      position: absolute;
+      right:0;
+      background-color: $almost-black;
+      box-shadow: 23px 0px 0px 0px $almost-black; 
+      h3 {
+        @include font ($font-1, 2rem, $sunflower-yellow, 400, 30px, 1.3px, left, 10px 0 0 40px);
+      }
+      p {
+        padding-left: 40px;
+      }
+      ul {
+        padding: 0 0 20px 62px;
+              li {
+                list-style: square;
+              }
+      }
+    }
+  }
+  .employ-sect,
+  .comment-sect {
+    display: flex;
+    flex-direction: column;
+    .employ-div,
+    .comment-div {
+      width: 850px;
+      h2 {
+        padding-left: 60px;
+      }
+      align-self: flex-end;
+      .comment1,
+      .comment2 {
+        display: flex;
+        align-self: center;
+        .comment-img {
+          width: 100px;
+          padding-right: 20px;
+        }
+        .comment-content{
+          width: 75%;
+          padding-bottom: 80px;
+        align-self: center;          
+        }
+        .date {
+          color: $sunflower-yellow;
+        }
+      }
+    }
+    .employ-div {
+      margin-top: 382px;
+      padding: 40px 0 40px;
+      border: 8px $sunflower-yellow solid;
+      border-right: none;
+      p{
+        padding: 20px 30px 0px 80px;    
+      }
+    }
+  }
+
+.all-comments  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+form {
+  @include form(94%)
+}
+
+// //MEDIA QUERY
+@media (max-width: 1325px){
+  .blog-header {
+    height: 400px;
+    .blog-header-img{
+    height: 0;
+    overflow: hidden;
+    }
+  }
+  
+  .side-content {
+    position: static;
+    display: flex;
+    padding-top: 20px;
+    width: 100%;
+
+    .img {
+      width: 50%;
+      border: 8px solid $almost-black;
+    }
+    .side-content-text {
+      position: static;
+      display: flex;
+      flex-direction: column;  
+      justify-content: space-evenly;    
+      width: 50%;
+    }
+  }
+
+  .employ-sect,
+  .comment-sect {
+    .employ-div,
+    .comment-div {
+      width: 100%;
+      .comment1,
+      .comment2{
+        display: flex;
+        justify-content: center;
+
+      }
+    }
+    .employ-div {    
+      margin-top: 10px;
+      border-right: 8px $sunflower-yellow solid;
+      padding: 8px;
+      p{
+        padding: 0;    
+      }      
+    }
+  }
+  .employ-sect .employ-div h2, .employ-sect .comment-div h2, .comment-sect .employ-div h2,  .comment-sect .comment-div h2 {
+  padding-left: 0;
+  }
+  .blog-form {
+    @include form(90%, 0 auto)
+  }  
+}
+
+@media (max-width: 790px){
+.side-content {
+  flex-direction: column;
+  .img {
+    width: 100%;
+    }
+  .side-content-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    }
+  }
+  .blog-form .top-input{
+    flex-direction: column;
+    input[type=text],
+    input[type=email]{
+      width: 100%;
+    }
+  }
+}

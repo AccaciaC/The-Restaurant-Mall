@@ -1,0 +1,19 @@
+@import 'setup';
+@import 'variables';
+@import 'mixins';
+
+.about {
+    height: 420px;
+  }
+
+  .about-main {
+    padding: 30px;
+  }
+
+  //MEDIA QUERY
+
+  @media (max-width: 1050px){
+  .about {
+      height: 400px;
+    }
+  }

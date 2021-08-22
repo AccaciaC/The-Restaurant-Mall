@@ -1,0 +1,224 @@
+@import 'setup';
+@import 'variables';
+@import 'mixins';
+
+
+
+section {
+    background-color: $pine;
+}
+
+.link-sect {
+  padding: 420px 0 200px;
+
+  .link-flex,
+  .icon-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+  }
+  .icon-flex{
+    width: 48%;
+  }
+  
+}
+
+  i {
+    width: 70px;
+      font-size: 4rem;
+      background-color: $sunflower-yellow;
+    border: 15px solid $sunflower-yellow;
+    border-radius: 50%;
+     text-align: center;
+     margin-right: 15px;  
+  }
+
+p,
+.blog-li li {
+ @include font ($font-2, 2rem, white, 400, 28px, 1px, left, 0, 0, none)
+}
+
+.almost-blk-background {
+    background-color: $almost-black;
+    position: relative;
+}
+
+.left-img,
+.right-img {
+  position: absolute;
+  width: 550px;
+}
+
+.left-img {
+  left:0;
+  top: -40px;
+  box-shadow: 20px 20px $sunflower-yellow;
+}
+.right-img {
+  right:0;
+  bottom:-40px;
+  box-shadow: -20px 20px 0px 3px $sunflower-yellow;
+}
+
+.content {
+  height: 800px;
+  display: flex;
+  justify-content: space-between;
+
+  .content-top,
+  .content-bottom {
+    display: flex;
+    flex-direction: column;
+  }
+  .content-bottom {
+    align-self: flex-end;
+    align-items: flex-end;
+    padding-bottom: 50px;
+    h2,
+    p {
+      text-align: right;
+    }
+  }
+  button {
+    width: 150px;
+  }
+}
+
+.content-btn {
+  @include button ($almost-black, $sunflower-yellow, 8px, 25px 0)
+}
+
+.content-btn:hover {
+  background-color: white;
+}
+
+.win-sect {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .win-div {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    p {
+      text-align: center;
+      width: 65%;
+    }
+  }
+}
+
+.blk-btn {
+      @include button (white, black, 10px, 20px 0, 200px)
+}
+
+.bleed-img-sect {
+  @include bleedImage (url(../the-restaurant-mall-assets/banner.jpg),400px)
+}
+
+.nature-flex {
+  height: 510px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .nature-img {
+    margin-right: 60px;
+    width: 500px;
+    box-shadow: -13px 17px 0px 5px $sunflower-yellow;
+  }
+  h2 {
+    text-align: left;
+  }
+}
+
+.gallery-flex {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  .gallery-img {
+    padding-right: 30px;
+  }
+}
+
+.gallery-flex div:nth-child(3n) {
+  padding-right: 0;
+}
+
+
+// //MEDIA QUERY
+@media (max-width: 1050px) {
+  .link-sect {
+    padding: 40px 0 80px;
+    .icon-flex {
+      width: 100%;
+    }
+  }
+
+   .win-sect .win-div p {
+      width: 90%;
+    }
+}
+@media (max-width: 1224px) {
+  .left-img,
+  .right-img {
+  position: static;
+  width: 100%;
+  box-shadow: none;
+  border: 3px $sunflower-yellow solid;
+  }
+
+  .content {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 0;
+    .content-top,
+    .content-bottom {
+    p{
+      text-align: center;
+    };
+    align-items: center;
+    }
+  }
+
+    .nature-flex {
+      height: auto;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .nature-content {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+      }
+      .nature-img {
+       margin: 20px 0 20px;
+       width: 28%;
+       box-shadow: -13px 5px 0px -1px $sunflower-yellow;
+      }
+      p{
+       text-align: center;
+      }
+  }
+
+  .gallery-flex {
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    
+    .gallery-img {
+      padding-right: 0;
+      width: 49%;
+    }
+  }
+
+  .gallery-flex li:nth-child(3n) {
+    display: none;
+  }  
+}

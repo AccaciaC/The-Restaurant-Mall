@@ -1,0 +1,100 @@
+@import 'setup';
+@import 'variables';
+@import 'mixins';
+
+//STYLES FOR WEBSITE'S HEADER
+header {
+  @include bleedImage(url(../the-restaurant-mall-assets/home-header.jpg), 800px);
+}
+
+.nav-flex {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.mobile-menu {
+  visibility: hidden; //I don't want screen reader to read this while on desktop mode.
+}
+
+ .nav-link-flex {
+  display: flex;
+}
+
+.nav-link-flex li {
+  padding: 10px;
+  margin-bottom: 25px;
+}
+
+nav a,
+footer a {
+   @include font ($font-1, 2rem, white, 800, 29px, 1px, left, 10px 10px);
+}
+
+nav a:hover {
+  border-bottom: 4px solid $sunflower-yellow;
+}
+button:hover {
+  background-color: $sunflower-yellow;
+}
+
+.header-image-flex {
+  display: flex;
+  justify-content: flex-end;
+}
+
+// //MEDIA QUERY
+@media (max-width: 1050px) {
+  .header-image,
+  .hidden-menu {
+    height: 0;
+    overflow: hidden;
+    }
+    .nav-link-flex {
+      flex-direction: column;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      text-align: center;
+      background-color: $almost-black;
+      width: 100%;
+    }
+
+    .nav-flex {
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .mobile-menu {
+      visibility: visible;
+      position: absolute;
+      left: 0px;
+      top: 0;
+
+      width: 120px;
+      height: 50px;
+      font-family: $font-1;
+      font-size: 2.5rem;
+      padding-top: 10px;
+      background-color: white;
+      color:$pine;
+      text-transform: uppercase;
+      border-top: $sunflower-yellow solid 5px;
+      border-bottom: $sunflower-yellow solid 5px;
+      letter-spacing: 7.5px;
+      transition: background .3s;
+    }
+    .mobile-menu:hover {
+      background: $sunflower-yellow;
+      cursor: pointer;
+    }
+
+    .link-sect {
+      padding: 50px 0 0;
+    }
+    .link-flex {
+      flex-direction: column;
+    }
+  } 
+  

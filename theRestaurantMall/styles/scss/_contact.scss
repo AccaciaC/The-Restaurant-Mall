@@ -1,0 +1,80 @@
+@import 'setup';
+@import 'variables';
+@import 'mixins';
+
+.contact-header {
+  @include bleedImage(url(../the-restaurant-mall-assets/contact-header.jpg), 800px);
+
+  .header-contact-form {
+    display: flex;
+    justify-content: center;
+    width:800px;
+    height: 600px;
+    background-color: $almost-black;
+    box-shadow: 25px 25px 0px -6px $sunflower-yellow;
+    margin: 100px 50px 0 0;
+  }
+}
+.contact-form {
+  width: 100%;
+  margin: 120px 30px;
+}
+.header-contact-form form fieldset {
+    @include form (100%, 0, $almost-black, row);
+  }
+
+.contact-main {
+  padding-top: 50px;
+  height: 500px;
+  z-index: -1;
+  position: relative;
+  .contact-info {
+    padding-top: 140px;
+    i{
+      color:$pine;
+      font-size: 2.5rem;
+    }
+    a{
+      padding:0;
+    }
+   p:first-of-type {
+      padding: 20px 0;
+    }
+  }
+}
+
+address {
+  font-style: normal;
+}
+
+// MEDIA QUERY
+@media (max-width: 1050px){
+  .contact-header {
+      height: 400px;
+    }
+  .header-image-flex {
+      justify-content: center;
+  }
+  .contact-header .header-contact-form {
+    width: 100%;
+    margin: -75px 0 0 0;
+    box-shadow: none;
+    border-bottom: 10px solid $sunflower-yellow;
+  }
+  .contact-main {
+      height: 900px;
+  }
+  .contact-info {
+      position: absolute;
+      bottom: 12px;
+  }
+
+  .header-contact-form .info-field{
+    flex-direction: column;
+    input[type=text],
+    input[type=email]{
+      width: 100%;
+    }
+  }
+
+}

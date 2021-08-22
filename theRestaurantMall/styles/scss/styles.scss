@@ -1,0 +1,105 @@
+@import 'setup';
+@import 'variables';
+@import 'mixins';
+@import 'header';
+@import 'about';
+@import 'blog';
+@import 'contact';
+@import 'home';
+
+//GENERAL STYLES
+body{
+  background-color: $pine;
+}
+.wrapper {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+h1,
+span {
+ @include font ($font-1, 6.9rem, white, 600);
+}
+
+span {
+  display: block;
+  background-color: white;
+  color:$pine;
+  width: 480px;
+}
+
+h2 {
+  @include font($font-1, 4.5rem, white, 400);
+}
+
+.yellow-h2 {
+   @include font($font-1, 4.5rem, $sunflower-yellow, 400, 99.8px, 1.3px, center);
+}
+
+footer {
+  background-color: $almost-black;
+  p {
+    text-align: center;
+    a {
+      font: inherit;
+      text-transform: inherit;
+      padding: 0;
+    }
+  }
+}
+
+.form-div {
+      width: 100%;
+}
+
+.skip-link {
+  position: absolute;
+  left: -1000px;
+  top: 5px;
+  z-index: 999;
+  background: white;
+  color: black;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+//Media Query 
+@media (max-width: 1050px) {
+  header {
+    height: 400px;
+  }
+
+  h1,
+  span {
+    font-size: 4rem;
+  }
+  span {
+  width: 300px;
+  }
+
+  p,
+  .blog-li  li  {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 1224px){
+  h2,
+  .yellow-h2 {
+    margin-top: 20px;
+    font-size: 2.2rem;
+    line-height: 28px;
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+
